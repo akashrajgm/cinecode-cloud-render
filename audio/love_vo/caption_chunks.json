@@ -1,0 +1,1129 @@
+[
+  {
+    "text": "Ever tried",
+    "start": "00:00:00,000",
+    "end": "00:00:00,622",
+    "words": [
+      {
+        "word": "Ever",
+        "clean": "ever",
+        "start": "00:00:00,000",
+        "end": "00:00:00,311",
+        "emphasis": false
+      },
+      {
+        "word": "tried",
+        "clean": "tried",
+        "start": "00:00:00,311",
+        "end": "00:00:00,622",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "secretly looking at",
+    "start": "00:00:00,622",
+    "end": "00:00:01,556",
+    "words": [
+      {
+        "word": "secretly",
+        "clean": "secretly",
+        "start": "00:00:00,622",
+        "end": "00:00:00,933",
+        "emphasis": false
+      },
+      {
+        "word": "looking",
+        "clean": "looking",
+        "start": "00:00:00,933",
+        "end": "00:00:01,244",
+        "emphasis": false
+      },
+      {
+        "word": "at",
+        "clean": "at",
+        "start": "00:00:01,244",
+        "end": "00:00:01,556",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "your classroom crush",
+    "start": "00:00:01,556",
+    "end": "00:00:02,489",
+    "words": [
+      {
+        "word": "your",
+        "clean": "your",
+        "start": "00:00:01,556",
+        "end": "00:00:01,867",
+        "emphasis": false
+      },
+      {
+        "word": "classroom",
+        "clean": "classroom",
+        "start": "00:00:01,867",
+        "end": "00:00:02,178",
+        "emphasis": false
+      },
+      {
+        "word": "crush",
+        "clean": "crush",
+        "start": "00:00:02,178",
+        "end": "00:00:02,489",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "when you're stuck",
+    "start": "00:00:02,489",
+    "end": "00:00:03,280",
+    "words": [
+      {
+        "word": "when",
+        "clean": "when",
+        "start": "00:00:02,489",
+        "end": "00:00:02,800",
+        "emphasis": false
+      },
+      {
+        "word": "you're",
+        "clean": "you're",
+        "start": "00:00:02,800",
+        "end": "00:00:03,040",
+        "emphasis": false
+      },
+      {
+        "word": "stuck",
+        "clean": "stuck",
+        "start": "00:00:03,040",
+        "end": "00:00:03,280",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "on the front",
+    "start": "00:00:03,280",
+    "end": "00:00:04,000",
+    "words": [
+      {
+        "word": "on",
+        "clean": "on",
+        "start": "00:00:03,280",
+        "end": "00:00:03,520",
+        "emphasis": false
+      },
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:03,520",
+        "end": "00:00:03,760",
+        "emphasis": false
+      },
+      {
+        "word": "front",
+        "clean": "front",
+        "start": "00:00:03,760",
+        "end": "00:00:04,000",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "bench? It's an",
+    "start": "00:00:04,000",
+    "end": "00:00:05,120",
+    "words": [
+      {
+        "word": "bench?",
+        "clean": "bench",
+        "start": "00:00:04,000",
+        "end": "00:00:04,240",
+        "emphasis": false
+      },
+      {
+        "word": "It's",
+        "clean": "it's",
+        "start": "00:00:04,240",
+        "end": "00:00:04,680",
+        "emphasis": false
+      },
+      {
+        "word": "an",
+        "clean": "an",
+        "start": "00:00:04,680",
+        "end": "00:00:05,120",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "absolute nightmare. Turn",
+    "start": "00:00:05,120",
+    "end": "00:00:06,400",
+    "words": [
+      {
+        "word": "absolute",
+        "clean": "absolute",
+        "start": "00:00:05,120",
+        "end": "00:00:05,560",
+        "emphasis": false
+      },
+      {
+        "word": "nightmare.",
+        "clean": "nightmare",
+        "start": "00:00:05,560",
+        "end": "00:00:06,000",
+        "emphasis": true
+      },
+      {
+        "word": "Turn",
+        "clean": "turn",
+        "start": "00:00:06,000",
+        "end": "00:00:06,400",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "around, and the",
+    "start": "00:00:06,400",
+    "end": "00:00:07,600",
+    "words": [
+      {
+        "word": "around,",
+        "clean": "around",
+        "start": "00:00:06,400",
+        "end": "00:00:06,800",
+        "emphasis": false
+      },
+      {
+        "word": "and",
+        "clean": "and",
+        "start": "00:00:06,800",
+        "end": "00:00:07,200",
+        "emphasis": false
+      },
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:07,200",
+        "end": "00:00:07,600",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "whole class catches",
+    "start": "00:00:07,600",
+    "end": "00:00:08,800",
+    "words": [
+      {
+        "word": "whole",
+        "clean": "whole",
+        "start": "00:00:07,600",
+        "end": "00:00:08,000",
+        "emphasis": false
+      },
+      {
+        "word": "class",
+        "clean": "class",
+        "start": "00:00:08,000",
+        "end": "00:00:08,400",
+        "emphasis": false
+      },
+      {
+        "word": "catches",
+        "clean": "catches",
+        "start": "00:00:08,400",
+        "end": "00:00:08,800",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "you staring. 30",
+    "start": "00:00:08,800",
+    "end": "00:00:10,183",
+    "words": [
+      {
+        "word": "you",
+        "clean": "you",
+        "start": "00:00:08,800",
+        "end": "00:00:09,200",
+        "emphasis": false
+      },
+      {
+        "word": "staring.",
+        "clean": "staring",
+        "start": "00:00:09,200",
+        "end": "00:00:09,600",
+        "emphasis": true
+      },
+      {
+        "word": "30",
+        "clean": "30",
+        "start": "00:00:09,600",
+        "end": "00:00:10,183",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "students silently studying",
+    "start": "00:00:10,183",
+    "end": "00:00:11,931",
+    "words": [
+      {
+        "word": "students",
+        "clean": "students",
+        "start": "00:00:10,183",
+        "end": "00:00:10,766",
+        "emphasis": false
+      },
+      {
+        "word": "silently",
+        "clean": "silently",
+        "start": "00:00:10,766",
+        "end": "00:00:11,349",
+        "emphasis": false
+      },
+      {
+        "word": "studying",
+        "clean": "studying",
+        "start": "00:00:11,349",
+        "end": "00:00:11,931",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "complete dead silence.",
+    "start": "00:00:11,931",
+    "end": "00:00:13,680",
+    "words": [
+      {
+        "word": "complete",
+        "clean": "complete",
+        "start": "00:00:11,931",
+        "end": "00:00:12,514",
+        "emphasis": false
+      },
+      {
+        "word": "dead",
+        "clean": "dead",
+        "start": "00:00:12,514",
+        "end": "00:00:13,097",
+        "emphasis": true
+      },
+      {
+        "word": "silence.",
+        "clean": "silence",
+        "start": "00:00:13,097",
+        "end": "00:00:13,680",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "And three rows",
+    "start": "00:00:13,680",
+    "end": "00:00:14,610",
+    "words": [
+      {
+        "word": "And",
+        "clean": "and",
+        "start": "00:00:13,680",
+        "end": "00:00:13,990",
+        "emphasis": false
+      },
+      {
+        "word": "three",
+        "clean": "three",
+        "start": "00:00:13,990",
+        "end": "00:00:14,300",
+        "emphasis": false
+      },
+      {
+        "word": "rows",
+        "clean": "rows",
+        "start": "00:00:14,300",
+        "end": "00:00:14,610",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "behind him is",
+    "start": "00:00:14,610",
+    "end": "00:00:15,540",
+    "words": [
+      {
+        "word": "behind",
+        "clean": "behind",
+        "start": "00:00:14,610",
+        "end": "00:00:14,920",
+        "emphasis": false
+      },
+      {
+        "word": "him",
+        "clean": "him",
+        "start": "00:00:14,920",
+        "end": "00:00:15,230",
+        "emphasis": false
+      },
+      {
+        "word": "is",
+        "clean": "is",
+        "start": "00:00:15,230",
+        "end": "00:00:15,540",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "the girl he",
+    "start": "00:00:15,540",
+    "end": "00:00:16,470",
+    "words": [
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:15,540",
+        "end": "00:00:15,850",
+        "emphasis": false
+      },
+      {
+        "word": "girl",
+        "clean": "girl",
+        "start": "00:00:15,850",
+        "end": "00:00:16,160",
+        "emphasis": false
+      },
+      {
+        "word": "he",
+        "clean": "he",
+        "start": "00:00:16,160",
+        "end": "00:00:16,470",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "cannot stop thinking",
+    "start": "00:00:16,470",
+    "end": "00:00:17,665",
+    "words": [
+      {
+        "word": "cannot",
+        "clean": "cannot",
+        "start": "00:00:16,470",
+        "end": "00:00:16,780",
+        "emphasis": false
+      },
+      {
+        "word": "stop",
+        "clean": "stop",
+        "start": "00:00:16,780",
+        "end": "00:00:17,090",
+        "emphasis": false
+      },
+      {
+        "word": "thinking",
+        "clean": "thinking",
+        "start": "00:00:17,090",
+        "end": "00:00:17,665",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "about. That's when",
+    "start": "00:00:17,665",
+    "end": "00:00:18,907",
+    "words": [
+      {
+        "word": "about.",
+        "clean": "about",
+        "start": "00:00:17,665",
+        "end": "00:00:18,240",
+        "emphasis": false
+      },
+      {
+        "word": "That's",
+        "clean": "that's",
+        "start": "00:00:18,240",
+        "end": "00:00:18,573",
+        "emphasis": false
+      },
+      {
+        "word": "when",
+        "clean": "when",
+        "start": "00:00:18,573",
+        "end": "00:00:18,907",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "he notices his",
+    "start": "00:00:18,907",
+    "end": "00:00:19,907",
+    "words": [
+      {
+        "word": "he",
+        "clean": "he",
+        "start": "00:00:18,907",
+        "end": "00:00:19,240",
+        "emphasis": false
+      },
+      {
+        "word": "notices",
+        "clean": "notices",
+        "start": "00:00:19,240",
+        "end": "00:00:19,573",
+        "emphasis": false
+      },
+      {
+        "word": "his",
+        "clean": "his",
+        "start": "00:00:19,573",
+        "end": "00:00:19,907",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "wristwatch. By tilting",
+    "start": "00:00:19,907",
+    "end": "00:00:20,804",
+    "words": [
+      {
+        "word": "wristwatch.",
+        "clean": "wristwatch",
+        "start": "00:00:19,907",
+        "end": "00:00:20,240",
+        "emphasis": true
+      },
+      {
+        "word": "By",
+        "clean": "by",
+        "start": "00:00:20,240",
+        "end": "00:00:20,522",
+        "emphasis": false
+      },
+      {
+        "word": "tilting",
+        "clean": "tilting",
+        "start": "00:00:20,522",
+        "end": "00:00:20,804",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "his wrist, just",
+    "start": "00:00:20,804",
+    "end": "00:00:21,650",
+    "words": [
+      {
+        "word": "his",
+        "clean": "his",
+        "start": "00:00:20,804",
+        "end": "00:00:21,086",
+        "emphasis": false
+      },
+      {
+        "word": "wrist,",
+        "clean": "wrist",
+        "start": "00:00:21,086",
+        "end": "00:00:21,368",
+        "emphasis": false
+      },
+      {
+        "word": "just",
+        "clean": "just",
+        "start": "00:00:21,368",
+        "end": "00:00:21,650",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "a few degrees",
+    "start": "00:00:21,650",
+    "end": "00:00:22,496",
+    "words": [
+      {
+        "word": "a",
+        "clean": "a",
+        "start": "00:00:21,650",
+        "end": "00:00:21,932",
+        "emphasis": false
+      },
+      {
+        "word": "few",
+        "clean": "few",
+        "start": "00:00:21,932",
+        "end": "00:00:22,214",
+        "emphasis": false
+      },
+      {
+        "word": "degrees",
+        "clean": "degrees",
+        "start": "00:00:22,214",
+        "end": "00:00:22,496",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "toward the sunlight.",
+    "start": "00:00:22,496",
+    "end": "00:00:23,920",
+    "words": [
+      {
+        "word": "toward",
+        "clean": "toward",
+        "start": "00:00:22,496",
+        "end": "00:00:22,778",
+        "emphasis": false
+      },
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:22,778",
+        "end": "00:00:23,060",
+        "emphasis": false
+      },
+      {
+        "word": "sunlight.",
+        "clean": "sunlight",
+        "start": "00:00:23,060",
+        "end": "00:00:23,920",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "The curved glass",
+    "start": "00:00:23,920",
+    "end": "00:00:25,147",
+    "words": [
+      {
+        "word": "The",
+        "clean": "the",
+        "start": "00:00:23,920",
+        "end": "00:00:24,329",
+        "emphasis": false
+      },
+      {
+        "word": "curved",
+        "clean": "curved",
+        "start": "00:00:24,329",
+        "end": "00:00:24,738",
+        "emphasis": false
+      },
+      {
+        "word": "glass",
+        "clean": "glass",
+        "start": "00:00:24,738",
+        "end": "00:00:25,147",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "turns into a",
+    "start": "00:00:25,147",
+    "end": "00:00:26,373",
+    "words": [
+      {
+        "word": "turns",
+        "clean": "turns",
+        "start": "00:00:25,147",
+        "end": "00:00:25,556",
+        "emphasis": false
+      },
+      {
+        "word": "into",
+        "clean": "into",
+        "start": "00:00:25,556",
+        "end": "00:00:25,964",
+        "emphasis": false
+      },
+      {
+        "word": "a",
+        "clean": "a",
+        "start": "00:00:25,964",
+        "end": "00:00:26,373",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "secret rearview mirror.",
+    "start": "00:00:26,373",
+    "end": "00:00:27,600",
+    "words": [
+      {
+        "word": "secret",
+        "clean": "secret",
+        "start": "00:00:26,373",
+        "end": "00:00:26,782",
+        "emphasis": true
+      },
+      {
+        "word": "rearview",
+        "clean": "rearview",
+        "start": "00:00:26,782",
+        "end": "00:00:27,191",
+        "emphasis": false
+      },
+      {
+        "word": "mirror.",
+        "clean": "mirror",
+        "start": "00:00:27,191",
+        "end": "00:00:27,600",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "Right there in",
+    "start": "00:00:27,600",
+    "end": "00:00:28,620",
+    "words": [
+      {
+        "word": "Right",
+        "clean": "right",
+        "start": "00:00:27,600",
+        "end": "00:00:27,940",
+        "emphasis": false
+      },
+      {
+        "word": "there",
+        "clean": "there",
+        "start": "00:00:27,940",
+        "end": "00:00:28,280",
+        "emphasis": false
+      },
+      {
+        "word": "in",
+        "clean": "in",
+        "start": "00:00:28,280",
+        "end": "00:00:28,620",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "the reflection, she",
+    "start": "00:00:28,620",
+    "end": "00:00:29,640",
+    "words": [
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:28,620",
+        "end": "00:00:28,960",
+        "emphasis": false
+      },
+      {
+        "word": "reflection,",
+        "clean": "reflection",
+        "start": "00:00:28,960",
+        "end": "00:00:29,300",
+        "emphasis": true
+      },
+      {
+        "word": "she",
+        "clean": "she",
+        "start": "00:00:29,300",
+        "end": "00:00:29,640",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "appears in golden",
+    "start": "00:00:29,640",
+    "end": "00:00:30,660",
+    "words": [
+      {
+        "word": "appears",
+        "clean": "appears",
+        "start": "00:00:29,640",
+        "end": "00:00:29,980",
+        "emphasis": false
+      },
+      {
+        "word": "in",
+        "clean": "in",
+        "start": "00:00:29,980",
+        "end": "00:00:30,320",
+        "emphasis": false
+      },
+      {
+        "word": "golden",
+        "clean": "golden",
+        "start": "00:00:30,320",
+        "end": "00:00:30,660",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "light, twirling her",
+    "start": "00:00:30,660",
+    "end": "00:00:31,667",
+    "words": [
+      {
+        "word": "light,",
+        "clean": "light",
+        "start": "00:00:30,660",
+        "end": "00:00:31,000",
+        "emphasis": false
+      },
+      {
+        "word": "twirling",
+        "clean": "twirling",
+        "start": "00:00:31,000",
+        "end": "00:00:31,333",
+        "emphasis": false
+      },
+      {
+        "word": "her",
+        "clean": "her",
+        "start": "00:00:31,333",
+        "end": "00:00:31,667",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "pen. He thinks",
+    "start": "00:00:31,667",
+    "end": "00:00:32,578",
+    "words": [
+      {
+        "word": "pen.",
+        "clean": "pen",
+        "start": "00:00:31,667",
+        "end": "00:00:32,000",
+        "emphasis": false
+      },
+      {
+        "word": "He",
+        "clean": "he",
+        "start": "00:00:32,000",
+        "end": "00:00:32,289",
+        "emphasis": false
+      },
+      {
+        "word": "thinks",
+        "clean": "thinks",
+        "start": "00:00:32,289",
+        "end": "00:00:32,578",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "he just pulled",
+    "start": "00:00:32,578",
+    "end": "00:00:33,445",
+    "words": [
+      {
+        "word": "he",
+        "clean": "he",
+        "start": "00:00:32,578",
+        "end": "00:00:32,867",
+        "emphasis": false
+      },
+      {
+        "word": "just",
+        "clean": "just",
+        "start": "00:00:32,867",
+        "end": "00:00:33,156",
+        "emphasis": false
+      },
+      {
+        "word": "pulled",
+        "clean": "pulled",
+        "start": "00:00:33,156",
+        "end": "00:00:33,445",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "off the smartest",
+    "start": "00:00:33,445",
+    "end": "00:00:34,313",
+    "words": [
+      {
+        "word": "off",
+        "clean": "off",
+        "start": "00:00:33,445",
+        "end": "00:00:33,735",
+        "emphasis": false
+      },
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:33,735",
+        "end": "00:00:34,024",
+        "emphasis": false
+      },
+      {
+        "word": "smartest",
+        "clean": "smartest",
+        "start": "00:00:34,024",
+        "end": "00:00:34,313",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "move in school",
+    "start": "00:00:34,313",
+    "end": "00:00:35,180",
+    "words": [
+      {
+        "word": "move",
+        "clean": "move",
+        "start": "00:00:34,313",
+        "end": "00:00:34,602",
+        "emphasis": false
+      },
+      {
+        "word": "in",
+        "clean": "in",
+        "start": "00:00:34,602",
+        "end": "00:00:34,891",
+        "emphasis": false
+      },
+      {
+        "word": "school",
+        "clean": "school",
+        "start": "00:00:34,891",
+        "end": "00:00:35,180",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "history. Except, she",
+    "start": "00:00:35,180",
+    "end": "00:00:36,651",
+    "words": [
+      {
+        "word": "history.",
+        "clean": "history",
+        "start": "00:00:35,180",
+        "end": "00:00:35,920",
+        "emphasis": false
+      },
+      {
+        "word": "Except,",
+        "clean": "except",
+        "start": "00:00:35,920",
+        "end": "00:00:36,286",
+        "emphasis": false
+      },
+      {
+        "word": "she",
+        "clean": "she",
+        "start": "00:00:36,286",
+        "end": "00:00:36,651",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "noticed the reflection",
+    "start": "00:00:36,651",
+    "end": "00:00:37,748",
+    "words": [
+      {
+        "word": "noticed",
+        "clean": "noticed",
+        "start": "00:00:36,651",
+        "end": "00:00:37,017",
+        "emphasis": true
+      },
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:37,017",
+        "end": "00:00:37,382",
+        "emphasis": false
+      },
+      {
+        "word": "reflection",
+        "clean": "reflection",
+        "start": "00:00:37,382",
+        "end": "00:00:37,748",
+        "emphasis": true
+      }
+    ]
+  },
+  {
+    "text": "the exact second",
+    "start": "00:00:37,748",
+    "end": "00:00:38,844",
+    "words": [
+      {
+        "word": "the",
+        "clean": "the",
+        "start": "00:00:37,748",
+        "end": "00:00:38,113",
+        "emphasis": false
+      },
+      {
+        "word": "exact",
+        "clean": "exact",
+        "start": "00:00:38,113",
+        "end": "00:00:38,479",
+        "emphasis": false
+      },
+      {
+        "word": "second",
+        "clean": "second",
+        "start": "00:00:38,479",
+        "end": "00:00:38,844",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "it happened. She",
+    "start": "00:00:38,844",
+    "end": "00:00:40,291",
+    "words": [
+      {
+        "word": "it",
+        "clean": "it",
+        "start": "00:00:38,844",
+        "end": "00:00:39,210",
+        "emphasis": false
+      },
+      {
+        "word": "happened.",
+        "clean": "happened",
+        "start": "00:00:39,210",
+        "end": "00:00:40,000",
+        "emphasis": false
+      },
+      {
+        "word": "She",
+        "clean": "she",
+        "start": "00:00:40,000",
+        "end": "00:00:40,291",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "hides a sweet",
+    "start": "00:00:40,291",
+    "end": "00:00:41,164",
+    "words": [
+      {
+        "word": "hides",
+        "clean": "hides",
+        "start": "00:00:40,291",
+        "end": "00:00:40,582",
+        "emphasis": false
+      },
+      {
+        "word": "a",
+        "clean": "a",
+        "start": "00:00:40,582",
+        "end": "00:00:40,873",
+        "emphasis": false
+      },
+      {
+        "word": "sweet",
+        "clean": "sweet",
+        "start": "00:00:40,873",
+        "end": "00:00:41,164",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "little smirk, and",
+    "start": "00:00:41,164",
+    "end": "00:00:42,036",
+    "words": [
+      {
+        "word": "little",
+        "clean": "little",
+        "start": "00:00:41,164",
+        "end": "00:00:41,455",
+        "emphasis": false
+      },
+      {
+        "word": "smirk,",
+        "clean": "smirk",
+        "start": "00:00:41,455",
+        "end": "00:00:41,745",
+        "emphasis": true
+      },
+      {
+        "word": "and",
+        "clean": "and",
+        "start": "00:00:41,745",
+        "end": "00:00:42,036",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "lets him keep",
+    "start": "00:00:42,036",
+    "end": "00:00:42,909",
+    "words": [
+      {
+        "word": "lets",
+        "clean": "lets",
+        "start": "00:00:42,036",
+        "end": "00:00:42,327",
+        "emphasis": false
+      },
+      {
+        "word": "him",
+        "clean": "him",
+        "start": "00:00:42,327",
+        "end": "00:00:42,618",
+        "emphasis": false
+      },
+      {
+        "word": "keep",
+        "clean": "keep",
+        "start": "00:00:42,618",
+        "end": "00:00:42,909",
+        "emphasis": false
+      }
+    ]
+  },
+  {
+    "text": "watching.",
+    "start": "00:00:42,909",
+    "end": "00:00:43,200",
+    "words": [
+      {
+        "word": "watching.",
+        "clean": "watching",
+        "start": "00:00:42,909",
+        "end": "00:00:43,200",
+        "emphasis": true
+      }
+    ]
+  }
+]

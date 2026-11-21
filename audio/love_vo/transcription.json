@@ -1,0 +1,230 @@
+{
+	"systeminfo": "WHISPER : VITISAI = 0 | COREML = 0 | OPENVINO = 0 | MTL : EMBED_LIBRARY = 1 | CPU : NEON = 1 | ARM_FMA = 1 | DOTPROD = 1 | ACCELERATE = 1 | OPENMP = 1 | REPACK = 1 | ",
+	"model": {
+		"type": "base",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"text": {
+			"ctx": 448,
+			"state": 512,
+			"head": 8,
+			"layer": 6
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "/Users/Akash'Mac/.cache/whisper/ggml-base.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:02,800"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 2800
+			},
+			"text": " Ever tried secretly looking at your classroom crush when"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:02,800",
+				"to": "00:00:04,240"
+			},
+			"offsets": {
+				"from": 2800,
+				"to": 4240
+			},
+			"text": " you're stuck on the front bench?"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:04,240",
+				"to": "00:00:06,000"
+			},
+			"offsets": {
+				"from": 4240,
+				"to": 6000
+			},
+			"text": " It's an absolute nightmare."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:06,000",
+				"to": "00:00:09,600"
+			},
+			"offsets": {
+				"from": 6000,
+				"to": 9600
+			},
+			"text": " Turn around, and the whole class catches you staring."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:09,600",
+				"to": "00:00:13,680"
+			},
+			"offsets": {
+				"from": 9600,
+				"to": 13680
+			},
+			"text": " 30 students silently studying complete dead silence."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:13,680",
+				"to": "00:00:17,090"
+			},
+			"offsets": {
+				"from": 13680,
+				"to": 17090
+			},
+			"text": " And three rows behind him is the girl he cannot stop"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,090",
+				"to": "00:00:18,240"
+			},
+			"offsets": {
+				"from": 17090,
+				"to": 18240
+			},
+			"text": " thinking about."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:18,240",
+				"to": "00:00:20,240"
+			},
+			"offsets": {
+				"from": 18240,
+				"to": 20240
+			},
+			"text": " That's when he notices his wristwatch."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:20,240",
+				"to": "00:00:23,060"
+			},
+			"offsets": {
+				"from": 20240,
+				"to": 23060
+			},
+			"text": " By tilting his wrist, just a few degrees toward the"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:23,060",
+				"to": "00:00:23,920"
+			},
+			"offsets": {
+				"from": 23060,
+				"to": 23920
+			},
+			"text": " sunlight."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:23,920",
+				"to": "00:00:27,600"
+			},
+			"offsets": {
+				"from": 23920,
+				"to": 27600
+			},
+			"text": " The curved glass turns into a secret rearview mirror."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:27,600",
+				"to": "00:00:31,000"
+			},
+			"offsets": {
+				"from": 27600,
+				"to": 31000
+			},
+			"text": " Right there in the reflection, she appears in golden light,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:31,000",
+				"to": "00:00:32,000"
+			},
+			"offsets": {
+				"from": 31000,
+				"to": 32000
+			},
+			"text": " twirling her pen."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,000",
+				"to": "00:00:35,180"
+			},
+			"offsets": {
+				"from": 32000,
+				"to": 35180
+			},
+			"text": " He thinks he just pulled off the smartest move in school"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,180",
+				"to": "00:00:35,920"
+			},
+			"offsets": {
+				"from": 35180,
+				"to": 35920
+			},
+			"text": " history."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,920",
+				"to": "00:00:39,210"
+			},
+			"offsets": {
+				"from": 35920,
+				"to": 39210
+			},
+			"text": " Except, she noticed the reflection the exact second it"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:39,210",
+				"to": "00:00:40,000"
+			},
+			"offsets": {
+				"from": 39210,
+				"to": 40000
+			},
+			"text": " happened."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,000",
+				"to": "00:00:43,200"
+			},
+			"offsets": {
+				"from": 40000,
+				"to": 43200
+			},
+			"text": " She hides a sweet little smirk, and lets him keep watching."
+		}
+	]
+}
