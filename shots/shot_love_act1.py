@@ -68,10 +68,10 @@ def create_desk_row(row_idx, y_pos):
             head.data.materials.append(skin_m)
             
             # Stylized Hair
-            hair_m = mat_hair_girl if is_heroine else mat_hair_hair = mat_hair_boy
+            hair_m = mat_hair_girl if is_heroine else mat_hair_boy
             hair = prim('sphere', name=f"Hair_R{row_idx}_S{seat_i}", r=0.12, loc=(sx, sy - 0.02, sz + 0.40), coll=C)
             hair.scale = Vector((1.05, 1.1, 0.7))
-            hair.data.materials.append(mat_hair_girl if is_heroine else mat_hair_boy)
+            hair.data.materials.append(hair_m)
             
             if is_hero:
                 head.name = "Hero_Head"
