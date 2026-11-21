@@ -8,11 +8,12 @@ Uses real 3D rigged teenage student character mesh (heroine_girl.glb).
 import sys, os, math, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
 from common import *
+import spiderverse
 from mathutils import Vector, Euler
 
 reset()
 sc = setup_render(start=1, end=72, res=(1080, 1920), samples=24, exposure=0.15, look='AgX - Punchy')
-compositor(bloom=0.25, threshold=0.96, bloom_size=0.45, dispersion=0.004)
+compositor(bloom=0.28, threshold=0.94, bloom_size=0.50, dispersion=0.012)
 
 # Classroom afternoon atmosphere
 w = world_color((0.15, 0.17, 0.22))
@@ -70,6 +71,13 @@ if girl_armature:
         ghead.rotation_euler = Euler((math.radians(2), math.radians(-5), math.radians(2)))
         ghead.keyframe_insert("rotation_euler", frame=72)
     bpy.ops.object.mode_set(mode='OBJECT')
+
+# Spider-Verse Comic Ink Outlines & Psychological Blendshapes
+girl_face = bpy.data.objects.get("Face (merged)(Clone)")
+girl_body = bpy.data.objects.get("Body (merged)")
+spiderverse.apply_comic_ink(girl_face, thickness=-0.003)
+spiderverse.apply_comic_ink(girl_body, thickness=-0.003)
+spiderverse.animate_heroine_girl_emotions(girl_face, girl_armature, shot_act=4)
 
 # Girl's face focus target
 girl_target = bpy.data.objects.new("GirlHeadTarget", None)

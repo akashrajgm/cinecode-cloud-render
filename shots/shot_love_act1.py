@@ -7,15 +7,16 @@ heroine girl seated three rows back, afternoon golden sunlight streaming through
 import sys, os, math, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
 from common import *
+import spiderverse
 from mathutils import Vector, Euler
 
 reset()
 sc = setup_render(start=1, end=72, res=(1080, 1920), samples=24, exposure=0.15, look='AgX - Punchy')
-compositor(bloom=0.25, threshold=0.96, bloom_size=0.45, dispersion=0.004)
+compositor(bloom=0.28, threshold=0.94, bloom_size=0.50, dispersion=0.012)
 
-# Classroom atmosphere
-w = world_color((0.15, 0.17, 0.22))
-add_world_fog(w, density=0.003, color=(0.96, 0.80, 0.50), anisotropy=0.70)
+# Classroom atmosphere with golden volumetric sunbeams
+w = world_color((0.12, 0.14, 0.18))
+add_world_fog(w, density=0.004, color=(0.98, 0.82, 0.50), anisotropy=0.74)
 
 C = collection("SET_LOVE_01")
 
@@ -26,14 +27,18 @@ mat_blackboard = mat_principled("Mat_Blackboard", color=(0.06, 0.10, 0.08), roug
 mat_wall = mat_principled("Mat_Wall", color=(0.90, 0.88, 0.84), rough=0.55)
 
 # Blackboard & Classroom Walls
-blackboard = prim('cube', name="Blackboard", scale=(3.2, 0.05, 1.2), loc=(0, -2.8, 1.4), coll=C)
+blackboard = prim('cube', name="Blackboard", scale=(3.4, 0.05, 1.3), loc=(0, -2.8, 1.4), coll=C)
 blackboard.data.materials.append(mat_blackboard)
 
-floor = prim('cube', name="Floor", scale=(6.0, 10.0, 0.1), loc=(0, 2.0, -0.6), coll=C)
+floor = prim('cube', name="Floor", scale=(7.0, 12.0, 0.1), loc=(0, 2.0, -0.6), coll=C)
 floor.data.materials.append(mat_desk_wood)
 
-wall = prim('cube', name="Wall", scale=(6.0, 0.1, 4.0), loc=(0, 8.0, 1.8), coll=C)
-wall.data.materials.append(mat_wall)
+wall_back = prim('cube', name="WallBack", scale=(7.0, 0.1, 4.5), loc=(0, 9.0, 1.8), coll=C)
+wall_back.data.materials.append(mat_wall)
+
+# Window wall on left with crossbars for volumetric light shafts
+win_wall = prim('cube', name="WinWall", scale=(0.1, 10.0, 4.5), loc=(-3.2, 2.0, 1.8), coll=C)
+win_wall.data.materials.append(mat_wall)
 
 # 4 Rows of Wooden Student Desks
 for r in range(4):
@@ -57,7 +62,7 @@ if boy_arm:
     boy_arm.location = Vector((0.0, -0.10, -0.42))
     boy_arm.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
     
-    # Animate Hero Boy's head: Nervous glance back, then quick snap forward
+    # Bone animation: Nervous glance back toward Row 3, quick snap forward
     bpy.context.view_layer.objects.active = boy_arm
     bpy.ops.object.mode_set(mode='POSE')
     head_bone = boy_arm.pose.bones.get("head 1")
@@ -65,13 +70,20 @@ if boy_arm:
         head_bone.rotation_mode = 'XYZ'
         head_bone.rotation_euler = Euler((0, 0, 0))
         head_bone.keyframe_insert("rotation_euler", frame=1)
-        head_bone.rotation_euler = Euler((math.radians(4), math.radians(16), math.radians(-8)))
+        head_bone.rotation_euler = Euler((math.radians(4), math.radians(18), math.radians(-10)))
         head_bone.keyframe_insert("rotation_euler", frame=32)
         head_bone.rotation_euler = Euler((math.radians(-2), math.radians(-2), 0))
         head_bone.keyframe_insert("rotation_euler", frame=50)
         head_bone.rotation_euler = Euler((0, 0, 0))
         head_bone.keyframe_insert("rotation_euler", frame=72)
     bpy.ops.object.mode_set(mode='OBJECT')
+
+# Hero Boy Spider-Verse Ink Outline & Psychological Blendshapes
+boy_head = bpy.data.objects.get("head")
+boy_wear = bpy.data.objects.get("wear")
+spiderverse.apply_comic_ink(boy_head, thickness=-0.003)
+spiderverse.apply_comic_ink(boy_wear, thickness=-0.003)
+spiderverse.animate_hero_boy_emotions(boy_head, boy_arm, shot_act=1)
 
 # 2. LOAD HEROINE GIRL AT ROW 3 (Three Rows Back Center)
 girl_path = os.path.join(FILM, "assets", "characters", "heroine_girl.glb")
@@ -82,20 +94,12 @@ if girl_arm:
     girl_arm.name = "Armature_HeroineGirl"
     girl_arm.location = Vector((0.0, 5.30, -0.40))
     girl_arm.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
-    
-    # Subtle living head tilt for heroine
-    bpy.context.view_layer.objects.active = girl_arm
-    bpy.ops.object.mode_set(mode='POSE')
-    ghead = girl_arm.pose.bones.get("J_Bip_C_Head")
-    if ghead:
-        ghead.rotation_mode = 'XYZ'
-        ghead.rotation_euler = Euler((0, 0, 0))
-        ghead.keyframe_insert("rotation_euler", frame=1)
-        ghead.rotation_euler = Euler((math.radians(3), math.radians(-6), math.radians(4)))
-        ghead.keyframe_insert("rotation_euler", frame=36)
-        ghead.rotation_euler = Euler((0, 0, 0))
-        ghead.keyframe_insert("rotation_euler", frame=72)
-    bpy.ops.object.mode_set(mode='OBJECT')
+
+# Heroine Girl Comic Ink
+girl_face = bpy.data.objects.get("Face (merged)(Clone)")
+girl_body = bpy.data.objects.get("Body (merged)")
+spiderverse.apply_comic_ink(girl_face, thickness=-0.003)
+spiderverse.apply_comic_ink(girl_body, thickness=-0.003)
 
 # Add other seated student silhouettes to populate the 30-40 student classroom
 mat_student_body = mat_principled("Mat_StudentBody", color=(0.18, 0.22, 0.35), rough=0.6)

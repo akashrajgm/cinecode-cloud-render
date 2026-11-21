@@ -7,11 +7,12 @@ The curved crystal catches window sunlight and reflects the EXACT 3D heroine gir
 import sys, os, math, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
 from common import *
+import spiderverse
 from mathutils import Vector, Euler
 
 reset()
 sc = setup_render(start=1, end=72, res=(1080, 1920), samples=24, exposure=0.15, look='AgX - Punchy')
-compositor(bloom=0.35, threshold=0.96, bloom_size=0.5, dispersion=0.005)
+compositor(bloom=0.35, threshold=0.92, bloom_size=0.55, dispersion=0.014)
 
 w = world_color((0.15, 0.17, 0.22))
 add_world_fog(w, density=0.004, color=(0.96, 0.80, 0.50), anisotropy=0.72)
@@ -70,6 +71,17 @@ if girl_armature:
     girl_armature.scale = Vector((0.34, 0.34, 0.34))
     girl_armature.location = Vector((0.0, -0.15, 0.08))
     girl_armature.rotation_euler = Euler((math.radians(-90), 0, 0), 'XYZ')
+
+# Comic Ink Outlines on the Reflected Heroine
+girl_face = bpy.data.objects.get("Face (merged)(Clone)")
+if girl_face:
+    spiderverse.apply_comic_ink(girl_face, thickness=-0.003)
+
+# Domed Sapphire Glass Crystal over the watch dial
+mat_sapphire = mat_glass("Mat_SapphireGlass", tint=(0.90, 0.94, 1.0), rough=0.04, ior=1.54)
+glass = prim('cylinder', name="SapphireCrystal", r=0.26, depth=0.012, segments=64, loc=(0, 0, 0.085), coll=C)
+glass.parent = watch
+glass.data.materials.append(mat_sapphire)
 
 # Watch tilts subtly to catch the window sunlight
 for f in range(1, 73):

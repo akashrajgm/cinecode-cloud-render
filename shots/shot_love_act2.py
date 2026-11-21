@@ -8,11 +8,12 @@ Uses real 3D rigged teenage student character mesh (hero_boy.glb).
 import sys, os, math, random
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
 from common import *
+import spiderverse
 from mathutils import Vector, Euler
 
 reset()
 sc = setup_render(start=1, end=72, res=(1080, 1920), samples=24, exposure=0.15, look='AgX - Punchy')
-compositor(bloom=0.22, threshold=0.96, bloom_size=0.45, dispersion=0.004)
+compositor(bloom=0.28, threshold=0.94, bloom_size=0.50, dispersion=0.012)
 
 # Classroom daylight atmosphere
 w = world_color((0.15, 0.17, 0.22))
@@ -93,6 +94,13 @@ if boy_armature:
             c_bone.keyframe_insert("rotation_euler", frame=f)
             
     bpy.ops.object.mode_set(mode='OBJECT')
+
+# Spider-Verse Comic Ink Outlines & Psychological Blendshapes
+boy_head = bpy.data.objects.get("head")
+boy_wear = bpy.data.objects.get("wear")
+spiderverse.apply_comic_ink(boy_head, thickness=-0.003)
+spiderverse.apply_comic_ink(boy_wear, thickness=-0.003)
+spiderverse.animate_hero_boy_emotions(boy_head, boy_armature, shot_act=2)
 
 # Head position is at Z = 1.05 when armature is at Z = -0.42
 head_target = bpy.data.objects.new("HeadTarget", None)
