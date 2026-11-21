@@ -42,13 +42,19 @@ if girl_armature:
     girl_armature.location = Vector((0.0, 0.28, -0.40))
     girl_armature.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
     
-    # Subtle playful head tilt animation across frames
-    for f in range(1, 73):
-        t = min(1.0, f / 48.0)
-        tilt_z = math.radians(180 + math.sin(t * math.pi * 0.5) * 8)
-        tilt_x = math.radians(math.sin(t * math.pi * 0.5) * 4)
-        girl_armature.rotation_euler = Euler((tilt_x, 0, tilt_z), 'XYZ')
-        girl_armature.keyframe_insert("rotation_euler", frame=f)
+    # Animate living playful head tilt and knowing smirk
+    bpy.context.view_layer.objects.active = girl_armature
+    bpy.ops.object.mode_set(mode='POSE')
+    ghead = girl_armature.pose.bones.get("J_Bip_C_Head")
+    if ghead:
+        ghead.rotation_mode = 'XYZ'
+        ghead.rotation_euler = Euler((0, 0, 0))
+        ghead.keyframe_insert("rotation_euler", frame=1)
+        ghead.rotation_euler = Euler((math.radians(6), math.radians(14), math.radians(-8)))
+        ghead.keyframe_insert("rotation_euler", frame=36)
+        ghead.rotation_euler = Euler((math.radians(8), math.radians(18), math.radians(-10)))
+        ghead.keyframe_insert("rotation_euler", frame=72)
+    bpy.ops.object.mode_set(mode='OBJECT')
 
 # Focus target
 girl_target = bpy.data.objects.new("GirlHeadTarget", None)

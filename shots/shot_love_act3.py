@@ -95,7 +95,14 @@ cam = camera(name="Camera", loc=cam_start, target=dial, focus=dial, lens=48.0, f
 track_to(cam, dial)
 cam.data.sensor_fit = 'VERTICAL'
 
-for f, pos in [(1, cam_start), (36, cam_mid), (72, cam_end)]:
+cam_positions = [
+    (1,  Vector((0.0, -1.05, 1.15))),
+    (18, Vector((0.0, -0.96, 1.06))),
+    (36, Vector((0.0, -0.88, 0.98))),
+    (54, Vector((0.0, -0.80, 0.91))),
+    (72, Vector((0.0, -0.72, 0.84))),
+]
+for f, pos in cam_positions:
     cam.location = pos
     cam.keyframe_insert("location", frame=f)
 

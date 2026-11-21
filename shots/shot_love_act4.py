@@ -43,7 +43,8 @@ pen.data.materials.append(mat_pen_gold)
 
 # Pen twirling animation
 for f in range(1, 73):
-    pen.rotation_euler.rotate(Euler((0, 0, 0.10), 'XYZ'))
+    rot_z = math.radians(f * 18.0)
+    pen.rotation_euler = Euler((math.radians(35), math.radians(20), rot_z), 'XYZ')
     pen.keyframe_insert("rotation_euler", frame=f)
 
 # IMPORT REAL 3D RIGGED 10TH-CLASS TEENAGE GIRL
@@ -55,6 +56,20 @@ girl_armature = bpy.data.objects.get("Armature")
 if girl_armature:
     girl_armature.location = Vector((0.0, 0.28, -0.40))
     girl_armature.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
+    
+    # Animate living character head tilt & gentle posture
+    bpy.context.view_layer.objects.active = girl_armature
+    bpy.ops.object.mode_set(mode='POSE')
+    ghead = girl_armature.pose.bones.get("J_Bip_C_Head")
+    if ghead:
+        ghead.rotation_mode = 'XYZ'
+        ghead.rotation_euler = Euler((0, 0, 0))
+        ghead.keyframe_insert("rotation_euler", frame=1)
+        ghead.rotation_euler = Euler((math.radians(4), math.radians(-10), math.radians(6)))
+        ghead.keyframe_insert("rotation_euler", frame=36)
+        ghead.rotation_euler = Euler((math.radians(2), math.radians(-5), math.radians(2)))
+        ghead.keyframe_insert("rotation_euler", frame=72)
+    bpy.ops.object.mode_set(mode='OBJECT')
 
 # Girl's face focus target
 girl_target = bpy.data.objects.new("GirlHeadTarget", None)
@@ -69,16 +84,20 @@ light(kind='SPOT', name="Spot_BeautyKey", loc=(-1.4, -1.6, 2.0),
 light(kind='AREA', name="Light_FillSoft", loc=(1.6, -0.8, 1.6), energy=200.0,
       color=(0.95, 0.82, 0.90), coll=C)
 
-# Camera: Front Portrait Medium Close-Up (9:16 Vertical)
-cam_start = Vector((0.0, -1.25, 1.10))
-cam_mid   = Vector((0.0, -1.05, 1.02))
-cam_end   = Vector((0.0, -0.90, 0.96))
+# Camera: Parallax Arc Cinematic Dolly (9:16 Vertical)
+cam_positions = [
+    (1,  Vector((-0.18, -1.25, 1.10))),
+    (18, Vector((-0.09, -1.15, 1.05))),
+    (36, Vector((0.00,  -1.05, 1.02))),
+    (54, Vector((0.08,  -0.96, 0.98))),
+    (72, Vector((0.15,  -0.88, 0.95))),
+]
 
-cam = camera(name="Camera", loc=cam_start, target=girl_target, focus=girl_target, lens=48.0, fstop=3.5, coll=C)
+cam = camera(name="Camera", loc=cam_positions[0][1], target=girl_target, focus=girl_target, lens=48.0, fstop=3.5, coll=C)
 track_to(cam, girl_target)
 cam.data.sensor_fit = 'VERTICAL'
 
-for f, pos in [(1, cam_start), (36, cam_mid), (72, cam_end)]:
+for f, pos in cam_positions:
     cam.location = pos
     cam.keyframe_insert("location", frame=f)
 

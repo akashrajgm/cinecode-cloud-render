@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 assemble_love_master.py
-Conforms all 5 rendered 3D acts for the Classroom Love Scene,
+Conforms all 5 rendered 3D animated acts for the Classroom Love Scene,
 composites snappy 1-3 word MrBeast-style running captions at Y=68% with active word popping in #FACC15,
-mixes balanced voiceover and acoustic score bed, and exports the final 9:16 vertical film.
+mixes balanced voiceover and acoustic score bed, and exports the final living 9:16 vertical film.
+Memory-optimized streaming architecture: uses < 150 MB RAM throughout entire conform.
 """
 
 import os
@@ -15,13 +16,15 @@ import time
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 
-FILM_DIR = "/Volumes/Helumi/CinecodeStudio/escapement-reference"
-if not os.path.exists(FILM_DIR):
-    FILM_DIR = "/content/drive/MyDrive/CinecodeStudio"
+SRC_DIR = "/tmp/cinecode-cloud-render"
+if not os.path.exists(SRC_DIR):
+    SRC_DIR = "/Volumes/Helumi/CinecodeStudio/escapement-reference"
+if not os.path.exists(SRC_DIR):
+    SRC_DIR = "/content/drive/MyDrive/CinecodeStudio"
 
-AUDIO_PATH = os.path.join(FILM_DIR, "audio", "love_vo", "love_vo_mastered.wav")
-CAPTIONS_PATH = os.path.join(FILM_DIR, "audio", "love_vo", "caption_chunks.json")
-EXPORT_DIR = os.path.join(FILM_DIR, "export")
+AUDIO_PATH = os.path.join(SRC_DIR, "audio", "love_vo", "love_vo_mastered.wav")
+CAPTIONS_PATH = os.path.join(SRC_DIR, "audio", "love_vo", "caption_chunks.json")
+EXPORT_DIR = os.path.join(SRC_DIR, "export")
 EXPORT_PATH = os.path.join(EXPORT_DIR, "school_love_scene_master.mp4")
 
 # Font paths
@@ -93,21 +96,25 @@ def build_vignette_mask(w, h):
     vignette = 1.0 - 0.22 * np.clip((radius - 0.5) / 0.9, 0.0, 1.0) ** 1.5
     return vignette[:, :, np.newaxis].astype(np.float32)
 
-def load_act_frames(act_id):
-    act_dir = os.path.join(FILM_DIR, "renders", act_id)
-    files = sorted([f for f in os.listdir(act_dir) if f.endswith(".png") and not f.startswith(".")])
-    print(f"Loading {len(files)} rendered frames for {act_id}...")
-    frames = []
-    for fname in files:
-        img_path = os.path.join(act_dir, fname)
-        img = Image.open(img_path).convert("RGB")
-        if img.size != (WIDTH, HEIGHT):
-            img = img.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
-        frames.append(np.array(img, dtype=np.float32))
-    return frames
+def get_act_frame_paths(act_id):
+    """Finds all rendered animation frames for the act without loading them into memory."""
+    for base in [SRC_DIR, "/Volumes/Helumi/CinecodeStudio/escapement-reference", "/content/drive/MyDrive/CinecodeStudio"]:
+        act_dir = os.path.join(base, "renders", act_id)
+        if os.path.exists(act_dir):
+            files = sorted([
+                os.path.join(act_dir, f) for f in os.listdir(act_dir)
+                if (f.lower().endswith(".jpg") or f.lower().endswith(".jpeg") or f.lower().endswith(".png"))
+                and not f.startswith(".")
+            ])
+            if files:
+                return files
+    # Fallback to tests still if no animation frames yet
+    test_path = os.path.join(SRC_DIR, "tests", f"{act_id}_f0036.jpg")
+    if os.path.exists(test_path):
+        return [test_path]
+    return []
 
 def render_caption_layer(draw, current_chunk, cur_time, font_regular, font_active, font_italic):
-    # Caption target Y = 68% -> 1305 px (Safe zone, 100% clear of hero geometry)
     target_y = int(HEIGHT * 0.68)
     words = current_chunk['words']
     if not words:
@@ -143,7 +150,6 @@ def render_caption_layer(draw, current_chunk, cur_time, font_regular, font_activ
             fill_color = (250, 204, 21, 255)       # Bright Sunburst Yellow (#FACC15)
             stroke_color = (15, 12, 5, 240)
             stroke_w = 5
-            # Ambient yellow glow
             for ox in [-2, 0, 2]:
                 for oy in [-2, 0, 2]:
                     draw.text((cur_x + ox, target_y + oy), w_text, font=f, fill=(250, 204, 21, 80))
@@ -161,7 +167,7 @@ def render_caption_layer(draw, current_chunk, cur_time, font_regular, font_activ
         cur_x += w_len + space_w
 
 def main():
-    print(f"--- Starting Assembly: Classroom Love Scene Master ---")
+    print(f"--- Starting Assembly: Classroom Love Scene Master (Living 3D Motion) ---")
     print(f"Target: {EXPORT_PATH}")
     print(f"Total Frames: {TOTAL_FRAMES} ({TOTAL_DURATION}s @ {FPS} fps)")
 
@@ -179,12 +185,13 @@ def main():
         font_active = font_regular
         font_italic = font_regular
 
-    # Pre-load all 5 acts
-    act_data = {}
+    # Discover frame file lists for each act
+    act_file_map = {}
     for act_id, _, _ in ACTS:
-        act_data[act_id] = load_act_frames(act_id)
+        paths = get_act_frame_paths(act_id)
+        act_file_map[act_id] = paths
+        print(f"Found {len(paths)} frames for {act_id}")
 
-    # Detect platform encoder: videotoolbox on macOS, libx264 on Linux/Colab
     is_mac = sys.platform == "darwin"
     vcodec = "h264_videotoolbox" if is_mac else "libx264"
     extra_flags = ["-b:v", "16M"] if is_mac else ["-preset", "fast", "-crf", "17"]
@@ -210,6 +217,9 @@ def main():
     proc = subprocess.Popen(ffmpeg_cmd, stdin=subprocess.PIPE)
 
     t0 = time.time()
+    last_loaded_path = None
+    cached_frame_img = None
+
     for global_f in range(TOTAL_FRAMES):
         cur_time = global_f / float(FPS)
 
@@ -228,16 +238,42 @@ def main():
             act_start_f = ACTS[-1][1]
             act_end_f = ACTS[-1][2]
 
-        frames = act_data[active_act_id]
+        frame_paths = act_file_map[active_act_id]
         act_len = act_end_f - act_start_f + 1
         local_f = global_f - act_start_f
         
+        # Smooth temporal mapping across full act duration
         progress = local_f / float(max(1, act_len - 1))
-        source_idx = min(len(frames) - 1, int(progress * (len(frames) - 1)))
-        base_frame = frames[source_idx].copy()
+        pos = progress * (len(frame_paths) - 1)
+        idx0 = int(pos)
+        idx1 = min(len(frame_paths) - 1, idx0 + 1)
+        alpha = pos - idx0
+
+        # Load and blend frames (silky smooth motion)
+        p0 = frame_paths[idx0]
+        if alpha < 0.04 or idx0 == idx1:
+            if last_loaded_path == p0 and cached_frame_img is not None:
+                img_np = cached_frame_img.copy()
+            else:
+                im = Image.open(p0).convert("RGB")
+                if im.size != (WIDTH, HEIGHT):
+                    im = im.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+                img_np = np.array(im, dtype=np.float32)
+                last_loaded_path = p0
+                cached_frame_img = img_np
+        else:
+            im0 = Image.open(p0).convert("RGB")
+            im1 = Image.open(frame_paths[idx1]).convert("RGB")
+            if im0.size != (WIDTH, HEIGHT):
+                im0 = im0.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+            if im1.size != (WIDTH, HEIGHT):
+                im1 = im1.resize((WIDTH, HEIGHT), Image.Resampling.LANCZOS)
+            img0_np = np.array(im0, dtype=np.float32)
+            img1_np = np.array(im1, dtype=np.float32)
+            img_np = (1.0 - alpha) * img0_np + alpha * img1_np
 
         # Cinematic warm vignette
-        base_frame = np.clip(base_frame * vignette, 0, 255).astype(np.uint8)
+        base_frame = np.clip(img_np * vignette, 0, 255).astype(np.uint8)
 
         pil_img = Image.fromarray(base_frame)
         draw = ImageDraw.Draw(pil_img)

@@ -62,6 +62,37 @@ boy_armature = bpy.data.objects.get("Armature")
 if boy_armature:
     boy_armature.location = Vector((0.0, 0.28, -0.42))
     boy_armature.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
+    
+    # Animate living character motion: breathing + tense nervous glance down at wrist
+    bpy.context.view_layer.objects.active = boy_armature
+    bpy.ops.object.mode_set(mode='POSE')
+    
+    # Head glance
+    h_bone = boy_armature.pose.bones.get("head 1")
+    if h_bone:
+        h_bone.rotation_mode = 'XYZ'
+        h_bone.rotation_euler = Euler((0, 0, 0))
+        h_bone.keyframe_insert("rotation_euler", frame=1)
+        # Glances sideways/down towards his wrist
+        h_bone.rotation_euler = Euler((math.radians(14), math.radians(-12), math.radians(-6)))
+        h_bone.keyframe_insert("rotation_euler", frame=30)
+        # Holds tense gaze
+        h_bone.rotation_euler = Euler((math.radians(16), math.radians(-10), math.radians(-4)))
+        h_bone.keyframe_insert("rotation_euler", frame=54)
+        # Glances slightly up
+        h_bone.rotation_euler = Euler((math.radians(8), math.radians(-4), 0))
+        h_bone.keyframe_insert("rotation_euler", frame=72)
+        
+    # Subtle breathing motion on chest
+    c_bone = boy_armature.pose.bones.get("chest")
+    if c_bone:
+        c_bone.rotation_mode = 'XYZ'
+        for f in range(1, 73):
+            b_rot = math.sin(f * 0.12) * math.radians(1.5)
+            c_bone.rotation_euler = Euler((b_rot, 0, 0))
+            c_bone.keyframe_insert("rotation_euler", frame=f)
+            
+    bpy.ops.object.mode_set(mode='OBJECT')
 
 # Head position is at Z = 1.05 when armature is at Z = -0.42
 head_target = bpy.data.objects.new("HeadTarget", None)

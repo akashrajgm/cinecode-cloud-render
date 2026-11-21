@@ -56,6 +56,22 @@ if boy_arm:
     boy_arm.name = "Armature_HeroBoy"
     boy_arm.location = Vector((0.0, -0.10, -0.42))
     boy_arm.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
+    
+    # Animate Hero Boy's head: Nervous glance back, then quick snap forward
+    bpy.context.view_layer.objects.active = boy_arm
+    bpy.ops.object.mode_set(mode='POSE')
+    head_bone = boy_arm.pose.bones.get("head 1")
+    if head_bone:
+        head_bone.rotation_mode = 'XYZ'
+        head_bone.rotation_euler = Euler((0, 0, 0))
+        head_bone.keyframe_insert("rotation_euler", frame=1)
+        head_bone.rotation_euler = Euler((math.radians(4), math.radians(16), math.radians(-8)))
+        head_bone.keyframe_insert("rotation_euler", frame=32)
+        head_bone.rotation_euler = Euler((math.radians(-2), math.radians(-2), 0))
+        head_bone.keyframe_insert("rotation_euler", frame=50)
+        head_bone.rotation_euler = Euler((0, 0, 0))
+        head_bone.keyframe_insert("rotation_euler", frame=72)
+    bpy.ops.object.mode_set(mode='OBJECT')
 
 # 2. LOAD HEROINE GIRL AT ROW 3 (Three Rows Back Center)
 girl_path = os.path.join(FILM, "assets", "characters", "heroine_girl.glb")
@@ -66,6 +82,36 @@ if girl_arm:
     girl_arm.name = "Armature_HeroineGirl"
     girl_arm.location = Vector((0.0, 5.30, -0.40))
     girl_arm.rotation_euler = Euler((0, 0, math.radians(180)), 'XYZ')
+    
+    # Subtle living head tilt for heroine
+    bpy.context.view_layer.objects.active = girl_arm
+    bpy.ops.object.mode_set(mode='POSE')
+    ghead = girl_arm.pose.bones.get("J_Bip_C_Head")
+    if ghead:
+        ghead.rotation_mode = 'XYZ'
+        ghead.rotation_euler = Euler((0, 0, 0))
+        ghead.keyframe_insert("rotation_euler", frame=1)
+        ghead.rotation_euler = Euler((math.radians(3), math.radians(-6), math.radians(4)))
+        ghead.keyframe_insert("rotation_euler", frame=36)
+        ghead.rotation_euler = Euler((0, 0, 0))
+        ghead.keyframe_insert("rotation_euler", frame=72)
+    bpy.ops.object.mode_set(mode='OBJECT')
+
+# Add other seated student silhouettes to populate the 30-40 student classroom
+mat_student_body = mat_principled("Mat_StudentBody", color=(0.18, 0.22, 0.35), rough=0.6)
+mat_student_head = mat_principled("Mat_StudentHead", color=(0.90, 0.76, 0.65), rough=0.5)
+
+student_positions = [
+    (-1.4, -0.10), (1.4, -0.10),
+    (-1.4, 1.70), (0.0, 1.70), (1.4, 1.70),
+    (-1.4, 3.50), (0.0, 3.50), (1.4, 3.50),
+    (-1.4, 5.30), (1.4, 5.30),
+]
+for idx, (sx, sy) in enumerate(student_positions):
+    s_torso = prim('cube', name=f"Student_Torso_{idx}", scale=(0.38, 0.22, 0.45), loc=(sx, sy + 0.30, 0.20), coll=C)
+    s_torso.data.materials.append(mat_student_body)
+    s_head = prim('sphere', name=f"Student_Head_{idx}", r=0.12, loc=(sx, sy + 0.30, 0.70), coll=C)
+    s_head.data.materials.append(mat_student_head)
 
 # Lighting: Warm Golden Afternoon Sun
 light(kind='SUN', name="Sun_Golden", rot=(math.radians(45), math.radians(-25), math.radians(65)),
